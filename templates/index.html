@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>wikiuz</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #searchInput { width: 300px; padding: 8px; margin-bottom: 20px; }
+    .person { margin-bottom: 15px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <h1>O'zbek Taniqli Shaxslar</h1>
+
+  <input type="text" id="searchInput" placeholder="Kimni qidirmoqchisiz?">
+
+  <ul id="peopleList">
+    <li><a href="persons/alishernavoiy.html">Alisher Navoiy</a></li>
+    <li><a href="persons/amirtemur.html">Amir Temur</a></li>
+    <li><a href="persons/abdullaqodiriy.html">Abdulla Qodiriy</a></li>
+    <li><a href="persons/bobur.html">Zahiriddin Muhammad Bobur</a></li>
+    <li><a href="persons/zulayho.html">Zulayho Boyhonova</a></li>
+    <li><a href="persons/ibn_sino.html">Ibn Sino</a></li>
+    <li><a href="persons/ibn_rokon.html">Ibn Rokon</a></li>
+    <li><a href="persons/ibn_alkufi.html">Ibn al-Kufi</a></li>
+    <li><a href="persons/al_xorazimiy.html">Ibn al-Xorazimiy</a></li>
+   </ul>
+  
+  <script>
+    const input = document.getElementById('searchInput');
+    const listItems = document.querySelectorAll('#peopleList li');
+  
+    input.addEventListener('input', () => {
+      const query = input.value.toLowerCase();
+      listItems.forEach(li => {
+        const text = li.textContent.toLowerCase();
+        if (text.includes(query)) {
+          li.style.display = '';
+        } else {
+          li.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  
+
+</body>
+</html>
 
